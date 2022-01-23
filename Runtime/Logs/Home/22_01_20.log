@@ -1,0 +1,18 @@
+[ 2022-01-20T13:21:45+08:00 ] 172.19.0.1 /
+ERR: could not find driver
+
+[ 2022-01-20T13:47:47+08:00 ] 172.19.0.1 /
+ERR: SQLSTATE[HY000] [2002] Connection refused
+
+[ 2022-01-20T14:29:25+08:00 ] 172.19.0.1 /apiindex/load_index_pintuan
+ERR: Call to undefined method Home\Model\PingoodsModel::get_pingoods_list()
+
+[ 2022-01-20T14:29:50+08:00 ] 172.19.0.1 /apiindex/load_index_pintuan
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_jinrun.jrs_home/_pingoods' doesn't exist
+
+[ 2022-01-20T14:29:57+08:00 ] 172.19.0.1 /apiindex/load_index_pintuan
+ERR: Call to undefined method Home\Model\PingoodsModel::get_pingoods_list()
+
+[ 2022-01-20T14:30:19+08:00 ] 172.19.0.1 /apiindex/load_index_pintuan
+ERR: Call to undefined method Home\Model\PingoodsModel::get_pingoods_list()
+

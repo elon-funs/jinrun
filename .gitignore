@@ -1,0 +1,6 @@
+Runtime/*/*
+Data/*/*
+Modules/Common/Conf/*
+Modules/Admin/Conf/*
+Modules/Home/Conf/*
+Modules/Seller/Conf/*

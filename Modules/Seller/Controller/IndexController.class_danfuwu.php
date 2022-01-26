@@ -32,14 +32,14 @@ class IndexController extends CommonController {
 	}
     public function index(){
          
-		 $config_arr = M('config')->where( array('name' => 'VERSION') )->find();
+		$config_arr = M('config')->where( array('name' => 'VERSION') )->find();
         $version = $config_arr['value'];
         $version_meta = $this->duoduo_version($version);
         
 		
         $isnew = true;
         $newsubversion = '';
-        
+        echo 888;exit();
         if(!empty($version_meta))
         {
             $isnew = false;

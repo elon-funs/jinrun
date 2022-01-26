@@ -24,7 +24,6 @@ class SellerManageController extends CommonController{
 	}
 	
      public function index(){
-		
 		//name=ddd
 		$name = I('get.name','','htmlspecialchars');
 		$search = array();

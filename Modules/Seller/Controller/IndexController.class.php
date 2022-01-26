@@ -8,10 +8,8 @@ class IndexController extends CommonController {
    	}
 	
     public function index(){
-		
 		//cookie('http_refer',$_SERVER['HTTP_REFERER']);
 		//cookie('last_login_page');
-		
 		$is_new = I('get.is_new', 0 );
 		
 		//获取有多少条的通知
@@ -84,15 +82,14 @@ class IndexController extends CommonController {
 			}
 		}
 		$this->is_can_update = $is_can_update;
-		
 		if( empty($is_new_backadmin) || $is_new_backadmin == 2 )
 		{
 			$this->display();
-		}else{
+		}else{ 
 			$this->display('new_index');
 		}
 		
-		//$this->display();
+		// $this->display();
         //$this->display('new_index');
     }
 	

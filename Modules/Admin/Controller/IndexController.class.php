@@ -8,7 +8,7 @@ class IndexController extends CommonController {
 		$this->breadcrumb2='首页';
 		$this->admin_domain = '';//http://pinduoduo.liofis.com';
 		$this->host = base64_encode( strtolower(strval($_SERVER['HTTP_HOST'])));
-		var_dump($this->host);exit();
+		// var_dump($this->host);exit();
 	}
 	function duoduo_action($action, $version='V1.0') {
 	    $host = base64_encode( strtolower(strval($_SERVER['HTTP_HOST'])));
@@ -27,7 +27,6 @@ class IndexController extends CommonController {
 	    return $this->duoduo_action('version', $version);
 	}
     public function index(){
-        
         $config_arr = M('config')->where( array('name' => 'VERSION') )->find();
         $version = $config_arr['value'];
         $version_meta = $this->duoduo_version($version);
@@ -79,7 +78,7 @@ class IndexController extends CommonController {
 		
 		$order_model=new \Admin\Model\OrderModel();   
 		
-		$data=$order_model->show_order_page();		
+		$data=$order_model->show_order_page($search['order_status_id']);		
 		
 		$this->empty=$data['empty'];
 		$this->list=$data['list'];		

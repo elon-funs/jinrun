@@ -40,7 +40,7 @@ class ApicheckoutController extends CommonController {
 	   
 		$order_goods_sql = "select og.name as goods_name,g.goods_id,g.pin_count,g.pinprice,g.image,g.fan_image,g.store_id,og.pin_id from ".C('DB_PREFIX').'order_goods as og ,'.C('DB_PREFIX')."goods as g 
 	                       where og.order_id = {$order_id} and g.goods_id = og.goods_id limit 1";
-	    
+	    var_dump($order_goods_sql);exit();
 	    $order_goods_arr = M()->query($order_goods_sql);
 		
 		$order_goods = $order_goods_arr[0];

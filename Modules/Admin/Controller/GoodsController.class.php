@@ -22,6 +22,7 @@ class GoodsController extends CommonController{
 	}
 	
 	public function index(){
+		var_dump(999);exit();
 		$model=new GoodsModel();   
 		
 		$filter=I('get.');

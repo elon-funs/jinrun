@@ -540,7 +540,7 @@ class MenuModel{
 				    ),
 				)
 			),
-			'communityhead'  => array(
+			/*'communityhead'  => array(
 				'title'    => '团长',
 				'subtitle' => '团长管理',
 				'icon'     => 'communityhead',
@@ -561,7 +561,7 @@ class MenuModel{
 						),
 					
 				),
-			),
+			),*/
 			'supply'  => array(
 				'title'    => '供应商',
 				'subtitle' => '供应商管理',
@@ -597,7 +597,7 @@ class MenuModel{
 		        )
 		    ),
 			
-			'group' 	=> array(
+			/*'group' 	=> array(
 		        'title'    => '拼团',
 		        'subtitle' => '拼团管理',
 		        'icon'     => 'pin',
@@ -619,7 +619,7 @@ class MenuModel{
 					array('title' => '提现设置', 'route' => 'group/withdraw_config', 'desc' => ''),
 		        )
 		    ),
-			
+			*/
 			'marketing' 	=> array(
 				'title'    => '营销',
 				'subtitle' => '营销活动',
@@ -687,7 +687,7 @@ class MenuModel{
 						),
 					)
 			),
-			'delivery'  => array(
+			/*'delivery'  => array(
 				'title'    => '配送',
 				'subtitle' => '配送单管理',
 				'icon'     => 'delivery2',
@@ -699,7 +699,7 @@ class MenuModel{
 					array('title' => '配送司机', 'route' => 'delivery/clerk', 'desc' => ''),
 					array('title' => '设置', 'route' => 'delivery/config', 'desc' => ''),
 				),
-			),
+			),*/
 			'reports' 	=> array(
 				'title'    => '数据',
 				'subtitle' => '数据统计',
@@ -708,7 +708,7 @@ class MenuModel{
 				'items'    => array(
 					array('title' => '营业数据', 'route' => 'reports/index', 'desc' => ''),
 					array('title' => '数据统计', 'route' => 'reports/datastatics', 'desc' => ''),
-					array('title' => '团长统计', 'route' => 'reports/communitystatics', 'desc' => ''),
+					// array('title' => '团长统计', 'route' => 'reports/communitystatics', 'desc' => ''),
 				)
 			),
 			'perm'  => array(
@@ -721,7 +721,7 @@ class MenuModel{
 					array('title' => '后台用户管理', 'route' => 'perm/user', 'desc' => ''),
 				),
 			),
-			'attachment'  => array(
+			/*'attachment'  => array(
 				'title'    => '附件',
 				'subtitle' => '附件管理',
 				'icon'     => 'attachment',
@@ -729,7 +729,7 @@ class MenuModel{
 				'items'    => array(
 					array('title' => '附件设置', 'route' => 'attachment/index', 'desc' => ''),
 				),
-			),
+			),*/
 			'config'       => array(
 				'title'    => '设置',
 				'subtitle' => '设置',
@@ -765,7 +765,7 @@ class MenuModel{
 						)
 					),
 					array('title' => '小程序路径', 'route' => 'config/links', 'desc' => ''),
-					array(
+					/*array(
 						'title' => '物流设置',
 						'route' => 'shipping/templates',
 						'items' => array(
@@ -775,7 +775,7 @@ class MenuModel{
 							array('title' => '快递方式', 'route' => 'express/config', 'desc' => ''),
 							array('title' => '配送方式', 'route' => 'express/deconfig', 'desc' => ''),
 						)
-					),
+					),*/
 					array(
 						'title' => '个人中心',
 						'route' => 'copyright/index',
@@ -786,7 +786,7 @@ class MenuModel{
 							array('title' => '图标设置', 'route' => 'copyright/icon', 'desc' => ''),
 						)
 					),
-					array(
+					/*array(
 						'title' => '小程序直播',
 						'route' => 'wxlive/index',
 						'is_hide_child' => 2,
@@ -794,8 +794,8 @@ class MenuModel{
 							array('title' => '直播间管理', 'route' => 'wxlive/index', 'desc' => ''),
 							array('title' => '设置', 'route' => 'wxlive/setting', 'desc' => ''),
 						)
-					),
-					//array('title' => '后台账户', 'route' => 'copyright/account', 'desc' => ''),
+					),*/
+					// array('title' => '后台账户', 'route' => 'copyright/account', 'desc' => ''),
 				)
 			),
 			'generalmall'  => array(

@@ -27,6 +27,7 @@ class ApiController extends CommonController {
 	**/
 	public function get_fissionbunus()
 	{
+		echo 999;exit();
 		$token = I('get.token');
 		$other_bonus_id = I('get.other_bonus_id', 0);
 			

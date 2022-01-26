@@ -24,7 +24,7 @@ class PublicController extends \Think\Controller {
             S('DB_CONFIG_DATA',$config);
 	    }
         C($config); //添加配置
-		
+			
 		
         if(IS_POST){
     	

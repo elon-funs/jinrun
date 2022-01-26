@@ -26,7 +26,7 @@ class OrderController extends CommonController{
      public function index(){
         $model=new OrderModel(); 
 		
-		
+		echo 999;exit();
 		
 		//$w=new \Lib\Kuaidiniao();		
 		//$w->subscribe('470');

@@ -304,15 +304,16 @@
                           <p><cite>{$sum_goods}</cite></p>
                         </a>
                       </li>
+					  
+                 </ul>
+				 <div class="h12"></div>
+				 <ul class=" layui-col-space12 layui-col-md12 layui-this">
 					  <li class="layui-col-xs25">
                         <a href="javascript:;"  class="layadmin-backlog-body">
                           <h3>平均价格</h3>
                           <p><cite>{$ave_money}</cite></p>
                         </a>
                       </li>
-                 </ul>
-				 <div class="h12"></div>
-				 <ul class=" layui-col-space12 layui-col-md12 layui-this">
 					  <li class="layui-col-xs25">
                         <a href="javascript:;" class="layadmin-backlog-body">
                           <h3>新增会员</h3>
@@ -323,18 +324,6 @@
                         <a href="javascript:;" class="layadmin-backlog-body">
                           <h3>会员数量</h3>
                           <p><cite>{$member_num}</cite></p>
-                        </a>
-                      </li>
-                      <li class="layui-col-xs25">
-                        <a href="javascript:;" class="layadmin-backlog-body">
-                          <h3>新增供货商</h3>
-                          <p><cite>{$add_supplier}</cite></p>
-                        </a>
-                      </li>
-                      <li class="layui-col-xs25">
-                        <a href="javascript:;"  class="layadmin-backlog-body">
-                          <h3>新增团长</h3>
-                          <p><cite>{$add_head}</cite></p>
                         </a>
                       </li>
 					  <li class="layui-col-xs25">
@@ -363,37 +352,7 @@
 			</div>
 			
 			
-			<div class="layui-row  layui-carousel layadmin-backlog">
-				
-				<div class="layui-col-sm6" style="margin-right:10px;">
-					<div class="layui-card-header ht15">7日内团长销量top10</div>
-					<table class="layui-table layuiadmin-page-table hs" lay-skin="line">
-                      <thead>
-                        <tr>
-						  <th style="color:#000;">名次</th>
-                          <th style="color:#000;">社区店名称</th>
-                          <th style="color:#000;">团长</th>
-                          <th style="color:#000;">订单数量</th>
-                          <th style="color:#000;">有效订单金额（元）</th>
-                        </tr> 
-                      </thead>
-                      <tbody>
-						<?php $i=1; foreach($sale_list as $k => $s){ ?>	
-						<?php 	
-							if( $i>10 ) break;
-						?>
-						<tr>
-                          <td><?php echo $i; ?></td>
-                          <td>{$s["community_name"]}</td>
-                          <td>{$s["head_name"]}</td>
-                          <td>{$s["count"]}</td>
-                          <td>{$s["sale_money"]}</td>
-                        </tr>
-						<?php $i++; } ?>
-                      </tbody>
-                    </table>
-				</div>
-				
+			<div class="layui-row  layui-carousel layadmin-backlog">	
 				<div class="layui-col-sm5 ">
 					<div class="layui-card-header ht15">7日内商品销量top10</div>
 					<table class="layui-table layuiadmin-page-table hs" lay-skin="line">

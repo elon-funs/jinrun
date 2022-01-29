@@ -212,21 +212,7 @@
 								</button>
 								<?php } ?>
 								<button class="btn btn-default btn-sm  btn-operation" type="button" data-toggle='batch-group'  id="batchcatesbut" >商品分类</button>
-								
-								<?php if( defined('ROLE') && ROLE == 'agenter'){ ?>
-										<?php if($is_distributionsale){ ?>
-											<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head" >分配售卖团长</button>
-											<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head_group" >分配售卖团长分组</button>
-										<?php  }else{  ?>
-										
-										<?php } ?>
-								<?php  }else{  ?>
-										<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head" >分配售卖团长</button>
-										<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head_group" >分配售卖团长分组</button>
-								<?php } ?>
-								
-								<button class="btn btn-default btn-sm btn-operation" type="button" data-toggle='batch-group'  id="batchtime" >设置活动时间</button>
-								
+							
 								<?php if($is_index){ ?>
 								<button class="btn btn-default btn-sm  btn-operation" type="button" data-toggle='batch'  data-href="{:U('goods/change',array('type'=>'is_index_show', 'value' => 0))}">
 									<i class='icow icow-xiajia3'></i> 取消首页推荐
@@ -576,20 +562,6 @@
 											</button>
 											<?php } ?>
 											<button class="btn btn-default btn-sm  btn-operation" type="button" data-toggle='batch-group'  id="batchcatesbut2" >商品分类</button>
-											
-											<?php if( defined('ROLE') && ROLE == 'agenter'){ ?>
-												<?php if($is_distributionsale){ ?>
-													<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head" >分配售卖团长</button>
-													<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head_group" >分配售卖团长分组</button>
-												<?php  }else{  ?>
-												
-												<?php } ?>
-											<?php  }else{  ?>
-													<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head" >分配售卖团长</button>
-													<button class="btn btn-default btn-sm  btn-operation"  type="button" data-toggle='batch-group'  id="batch_head_group" >分配售卖团长分组</button>
-											<?php } ?>
-											
-											<button class="btn btn-default btn-sm btn-operation" type="button" data-toggle='batch-group'  id="batchtime" >设置活动时间</button>
 											
 											<?php if($is_index){ ?>
 											<button class="btn btn-default btn-sm  btn-operation" type="button" data-toggle='batch'  data-href="{:U('goods/change',array('type'=>'is_index_show', 'value' => 0))}">

@@ -900,13 +900,13 @@ class ReportsController extends CommonController{
 		$member_num = $member_num[0]['count'];
 		
 		//新增供货商add_supplier
-		$add_supplier = M()->query("select count( * ) as count from ".C('DB_PREFIX')."lionfish_comshop_supply where addtime > ".$today['egt']." and addtime < ".$today['lt']."  and ".$condition );
+		/*$add_supplier = M()->query("select count( * ) as count from ".C('DB_PREFIX')."lionfish_comshop_supply where addtime > ".$today['egt']." and addtime < ".$today['lt']."  and ".$condition );
 		$add_supplier = $add_supplier[0]['count'];		
 	
 		//新增团长add_head	
 		
 		$add_head = M()->query("select count( * ) as count from ".C('DB_PREFIX')."lionfish_community_head where addtime > ".$today['egt']." and addtime < ".$today['lt']." and  ".$condition );
-		$add_head = $add_head[0]['count'];		
+		$add_head = $add_head[0]['count'];*/		
 		
 		//新增商品add_goods
 		
@@ -1087,8 +1087,8 @@ class ReportsController extends CommonController{
 		$this->add_member = $add_member;
 		$this->member_num = $member_num;
 
-		$this->add_supplier = $add_supplier;
-		$this->add_head = $add_head;
+		// $this->add_supplier = $add_supplier;
+		// $this->add_head = $add_head;
 		$this->add_goods = $add_goods;
 
 		$this->todaytime =  $todaytime;

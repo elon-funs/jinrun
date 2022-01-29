@@ -244,26 +244,7 @@
 					</div>
 				</a>
 				<?php } ?>
-				
-				
-				<?php if (!defined('ROLE') || ROLE != 'agenter' ) {?>
-				<a class="flex-item" href="<?php echo U('communityhead/distribulist'); ?>"> 
-					<img class="icon" src="/static/images/Block-6.png">
-					<div class="text">
-						<div class="num total_tixian_money"></div>
-						<div class="title">团长提现中金额</div>
-					</div>
-				</a>
-				  
-				<a class="flex-item" title="团长总佣金=待结算佣金+已结算佣金" href="<?php echo U('communityhead/distribulist'); ?>"> 
-					<img class="icon" src="/static/images/Block-7.png">
-					<div class="text">
-						<div class="num total_commiss_money"></div>
-						<div class="title">团长总佣金</div>
-					</div>
-				</a>
-				<?php } ?>
-				
+			
 				<a class="flex-item" href="<?php echo U('order/index'); ?>"> 
 					<img class="icon" src="/static/images/Block-5.png">
 					<div class="text">
@@ -338,14 +319,7 @@
 									<a class="num after_sale_order_count" href="<?php echo U('order/orderaftersales'); ?>"></a>
 								</div>
 								<?php } ?>
-								<?php if(D('Seller/Menu')->check_seller_perm('communityhead/index')){ ?>
-								<div class="flex-item">
-									<div>团长提现</div>
-									<a class="num tixian_count" href="<?php echo U('communityhead/distribulist'); ?>">0</a>
-								</div>
-								<?php } ?>
 							</div>
-						<?php  }else{  ?>
 							<div class="flex-items tasks">
 								<div class="flex-item">
 									<div>待处理退款</div>
@@ -393,10 +367,6 @@
                         <div class="flex-item">
                             <div class="num goods_count"></div>
                             <div>商品总数</div>
-                        </div>
-                        <div class="flex-item">
-                            <div class="num community_head_count"></div>
-                            <div>团长总数</div>
                         </div>
                     </div>
                     <div class="flex-items total-mes">
@@ -465,13 +435,6 @@
                         <a href="<?php echo U('user/index'); ?>" class="flex-item">
                             <i class="iconfont icon--users"></i>
                             <div>会员管理</div> 
-                        </a>
-						<?php } ?>
-						
-						<?php if(D('Seller/Menu')->check_seller_perm('communityhead/index')){ ?>
-                        <a href="<?php echo U('communityhead/index'); ?>" class="flex-item">
-                            <i class="iconfont icon--tree"></i>
-                            <div>团长管理</div>
                         </a>
 						<?php } ?>
 						
@@ -546,33 +509,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="row-panel-5">
-				<div class="mypanel total-panel">
-					<div class="mypanel-heading">最近7天团长增长情况</div>
-					<div class="mypanel-body">
-						<div id="echat_head_incr" style="height:460px;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row-panel">
-			<div class="row-panel-7">
-				<div class="mypanel total-panel">
-					<div class="mypanel-heading">本月团长销售排行</div>
-					<div class="mypanel-body">
-						<div id="echat_month_head_sales" style="height:460px;"></div>
-					</div>
-				</div>
-			</div>
-			<div class="row-panel-5">
-				<div class="mypanel total-panel">
-					<div class="mypanel-heading">上月团长销售排行</div>
-					<div class="mypanel-body">
-						<div id="echat_lastmonth_head_sales" style="height:460px;"></div>
-					</div>
-				</div>
-			</div>
 		</div>
 		
 		<div class="row-panel">
@@ -631,9 +567,6 @@ layui.use(['jquery', 'layer'], function(){
   
    
   load_echat_member_incr();
-  load_echat_head_incr();
-  load_echat_month_head_sales();
-  load_echat_lastmonth_head_sales();
   load_echat_month_goods_sales();
   load_echat_lastmonth_goods_sales();
   
@@ -1304,8 +1237,6 @@ function load_data()
 				$('.seven_order_count').html( data.data.seven_order_count );
 				$('.seven_pay_money').html(data.data.seven_pay_money);
 				$('.seven_refund_money').html(data.data.seven_refund_money);
-				
-				$('.community_head_count').html(data.data.community_head_count);
 				$('.seven_order_count').html(data.data.seven_order_count);
 				
 				

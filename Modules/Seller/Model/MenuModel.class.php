@@ -474,7 +474,7 @@ class MenuModel{
 				'route' => 'order/index',
 				'items'    => array(
 					array('title' => '订单列表', 'route' => 'order/index', 'desc' => ''),
-					array('title' => '批量发货', 'route' => 'order/ordersendall', 'desc' => ''),
+					// array('title' => '批量发货', 'route' => 'order/ordersendall', 'desc' => ''),
 					/**
 					array(
 						'title' => '配送管理',
@@ -530,9 +530,9 @@ class MenuModel{
 				        'title' => '会员分销',
 				        'route' => 'distribution/distribution',
 				        'items' => array(
-				            array('title' => '分销列表', 'route' => 'distribution/distribution', 'desc' => ''),
+				            // array('title' => '分销列表', 'route' => 'distribution/distribution', 'desc' => ''),
 				            array('title' => '订单管理', 'route' => 'distribution/distributionorder', 'desc' => ''),
-				            array('title' => '分销设置', 'route' => 'distribution/config', 'desc' => ''),
+				            // array('title' => '分销设置', 'route' => 'distribution/config', 'desc' => ''),
 							array('title' => '海报设置', 'route' => 'distribution/qrcodeconfig', 'desc' => ''),
 				            array('title' => '提现列表', 'route' => 'distribution/withdrawallist', 'desc' => ''),
 				            array('title' => '提现设置', 'route' => 'distribution/withdraw_config', 'desc' => ''),
@@ -561,7 +561,7 @@ class MenuModel{
 						),
 					
 				),
-			),*/
+			),
 			'supply'  => array(
 				'title'    => '供应商',
 				'subtitle' => '供应商管理',
@@ -584,7 +584,7 @@ class MenuModel{
 							),
 						),
 				),
-			),
+			),*/
 		    'article' 	=> array(
 		        'title'    => '文章',
 		        'subtitle' => '文章管理',
@@ -647,7 +647,7 @@ class MenuModel{
 							)
 						),
 						array('title' => '整点秒杀', 'route' => 'marketing/seckill', 'desc' => ''),
-						array(
+						/*array(
 							'title' => '菜谱',
 							'route' => 'recipe/index',
 							'items' => array(
@@ -656,7 +656,7 @@ class MenuModel{
 								array('title' => '幻灯片', 'route' => 'recipe/slider', 'desc' => ''),
 								array('title' => '菜谱设置', 'route' => 'recipe/config', 'desc' => ''),
 							)
-						),
+						),*/
 						array(
 							'title' => '群接龙',
 							'route' => 'solitaire/index',
@@ -794,11 +794,11 @@ class MenuModel{
 							array('title' => '直播间管理', 'route' => 'wxlive/index', 'desc' => ''),
 							array('title' => '设置', 'route' => 'wxlive/setting', 'desc' => ''),
 						)
-					),*/
-					// array('title' => '后台账户', 'route' => 'copyright/account', 'desc' => ''),
+					),
+					array('title' => '后台账户', 'route' => 'copyright/account', 'desc' => ''),*/
 				)
 			),
-			'generalmall'  => array(
+			/*'generalmall'  => array(
 				'title'    => '商城',
 				'subtitle' => '商城管理',
 				'icon'     => 'store',
@@ -807,7 +807,7 @@ class MenuModel{
 					array('title' => '幻灯片', 'route' => 'generalmall/slider', 'desc' => ''),
 					array('title' => '导航图标', 'route' => 'generalmall/navigat', 'desc' => ''),
 				),
-			),
+			),*/
 		);	
 		
 		

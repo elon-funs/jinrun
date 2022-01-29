@@ -527,38 +527,6 @@
 						<div class="region-goods-details ">
 							
 							<div class="region-goods-right col-sm-10">
-								<?php if( empty($community_head_level) || count($community_head_level) ==1 || $is_head_takegoods ==0 ){ ?>
-								<div class="layui-form-item">
-								   <label class="layui-form-label">商品独立团长提成</label>
-								  
-								   <?php if( !empty($community_money_type) && $community_money_type ==1 ){ ?>
-									<div class="layui-col-sm-10 ">
-										<div class="input-group">
-											<input type="text" name="community_head_commission" id="community_head_commission" class="form-control valid" value="<?php if(empty($item)){ ?>{$communityhead_commission}<?php }else{ ?>{$item['community_head_commission']}<?php } ?>" />
-											<span class="input-group-addon">元 </span>
-										</div>
-										<div class="layui-form-mid layui-word-aux">预计团长可得佣金¥<font ><?php if(isset($item['community_head_commission'])){ ?>{:round( $item['community_head_commission'] ,2) }<?php }else{ ?>0.00<?php } ?></font></div>	
-									</div>
-									<?php }else{ ?>
-									<div class="layui-col-sm-10 ">
-										<div class="input-group">
-											<input type="text" name="community_head_commission" id="community_head_commission" class="form-control valid" value="<?php if( empty($item)){ ?>{$communityhead_commission}<?php  }else{  ?>{$item['community_head_commission']}<?php } ?>" />
-											<span class="input-group-addon">% </span>
-										</div>
-										<div class="layui-form-mid layui-word-aux">预计团长可得佣金¥<font id="precommiss_head_money_tip"><?php if( isset($item['community_head_commission'])){ ?><?php echo round( ($item['community_head_commission']*$item['price'])/100 ,2); ?><?php  }else{  ?>0.00<?php } ?></font>，将根据商品最终的成交价格来计算佣金</div>	
-									</div>
-									<?php } ?>
-									
-									
-								</div>
-								<?php } ?>
-								<div class="layui-form-item">
-								   <label class="layui-form-label">所有团长可销售</label>
-									<div class="layui-input-block ">
-										<input type="checkbox" lay-skin="primary" name="is_all_sale" class="form-control valid" <?php if( empty($item) || $item['is_all_sale'] ==1 || !isset($item['is_all_sale'])){ ?>checked<?php } ?> value="1" />
-											
-									</div>
-								</div>
 								<?php if($is_newbuy){ ?>
 								<div class="layui-form-item">
 								   <label class="layui-form-label">新人专享</label>

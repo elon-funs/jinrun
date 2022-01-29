@@ -313,24 +313,10 @@
 									<a class="num hasnum stock_goods_count" href="<?php echo U('goods/index', array('type' => 'warehouse')); ?>"></a>
 								</div> 
 								<?php } ?>
-								<?php if(D('Seller/Menu')->check_seller_perm('order/index')){ ?>
 								<div class="flex-item">
 									<div>待处理退货</div> 
 									<a class="num after_sale_order_count" href="<?php echo U('order/orderaftersales'); ?>"></a>
 								</div>
-								<?php } ?>
-							</div>
-							<div class="flex-items tasks">
-								<div class="flex-item">
-									<div>待处理退款</div>
-									<a class="num hasnum after_sale_order_count" href="<?php echo U('order/orderaftersales'); ?>"></a>
-								</div> 
-								
-								<div class="flex-item">
-									<div>待处理退货</div> 
-									<a class="num after_sale_order_count" href="<?php echo U('order/orderaftersales'); ?>"></a>
-								</div>
-								
 							</div>
 						<?php } ?>
 						

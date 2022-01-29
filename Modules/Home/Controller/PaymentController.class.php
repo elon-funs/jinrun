@@ -130,7 +130,6 @@ class PaymentController extends CommonController {
 	function pay_api($payment_method,$order_all_id){
 		
 		$order_all = M('order_all')->where( array('id' => $order_all_id) )->find();
-		
 		if($payment_method=='alipay'){			
 			
 			$alipay= new \Lib\Payment\Alipay(get_payment_config('alipay'),$order_all);

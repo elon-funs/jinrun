@@ -46,10 +46,9 @@ class PayNotifyCallBack extends WxPayNotify
 		global $_W;
 		global $_GPC;
 		
-
 		//global $_W;
 		
-		 $out_trade_no_str = $data['out_trade_no'];
+		$out_trade_no_str = $data['out_trade_no'];
 		$out_trade_no_arr =  explode('-',$out_trade_no_str);
 		$out_trade_no = $out_trade_no_arr[0];
 		

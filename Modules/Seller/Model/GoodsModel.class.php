@@ -81,7 +81,7 @@ class GoodsModel extends Model{
 		$post_data_goods['showsales'] = I('post.showsales');
 		$post_data_goods['dispatchtype'] = I('post.dispatchtype');
 		$post_data_goods['dispatchid'] = I('post.dispatchid');
-		$post_data_goods['dispatchprice'] = I('post.dispatchprice');
+		$post_data_goods['dispatchprice'] = I('post.dispatchprice','0.00');
 		$post_data_goods['codes'] = I('post.codes','','trim');
 		$post_data_goods['weight'] = I('post.weight','','trim');
 		$post_data_goods['total'] = I('post.total','','trim');
@@ -564,7 +564,7 @@ class GoodsModel extends Model{
 			
 
 			//规格插入
-			$post_data_commiss = array();
+			/*$post_data_commiss = array();
 			
 			$post_data_commiss['goods_id'] = $goods_id;
 			$post_data_commiss['nocommission'] =  I('post.nocommission',0,'intval');
@@ -578,7 +578,7 @@ class GoodsModel extends Model{
 			$post_data_commiss['commission3_pay'] = I('post.commission3_pay');
 			
 			M('lionfish_comshop_good_commiss')->add( $post_data_commiss );
-			
+			*/
 			D('Seller/Redisorder')->sysnc_goods_total($goods_id);
 	}
 	
@@ -1099,7 +1099,7 @@ class GoodsModel extends Model{
 		$post_data_goods['dispatchtype'] = I('post.dispatchtype');
 		$post_data_goods['dispatchid'] = I('post.dispatchid');
 		$post_data_goods['index_sort'] = I('post.index_sort','','intval');
-		$post_data_goods['dispatchprice'] = I('post.dispatchprice');
+		$post_data_goods['dispatchprice'] = I('post.dispatchprice','0.00');
 		$post_data_goods['codes'] = I('post.codes');
 		$post_data_goods['weight'] = I('post.weight');
 		$post_data_goods['total'] = I('post.total');
@@ -1115,7 +1115,6 @@ class GoodsModel extends Model{
 		
 		$post_data_goods['is_take_vipcard'] =  I('post.is_take_vipcard',0,'intval');
 		
-		
 		if (defined('ROLE') && ROLE == 'agenter' ) {
 			$supply_edit_goods_shenhe = D('Home/Front')->get_config_by_name('supply_edit_goods_shenhe');
 			if( empty($supply_edit_goods_shenhe) )
@@ -1130,8 +1129,8 @@ class GoodsModel extends Model{
 			
 		}
 		
-		M('lionfish_comshop_goods')->where(array('id' => $goods_id))->save($post_data_goods);
-		
+		$sql=M('lionfish_comshop_goods')->where(array('id' => $goods_id))->save($post_data_goods);
+
 		//find type ,modify somethings TODO...
 		
 		$pin_type_arr = array(
@@ -1717,7 +1716,7 @@ class GoodsModel extends Model{
 		//规格插入
 		//lionfish_comshop_good_commiss
 		
-		M('lionfish_comshop_good_commiss')->where( array('goods_id' => $goods_id ) )->delete();
+		/*M('lionfish_comshop_good_commiss')->where( array('goods_id' => $goods_id ) )->delete();
 		
 		
 		$post_data_commiss = array();
@@ -1732,8 +1731,7 @@ class GoodsModel extends Model{
 		$post_data_commiss['commission3_rate'] = I('post.commission3_rate');
 		$post_data_commiss['commission3_pay'] = I('post.commission3_pay');
 		
-		M('lionfish_comshop_good_commiss')->add( $post_data_commiss );
-		
+		M('lionfish_comshop_good_commiss')->add( $post_data_commiss );*/
 		D('Seller/Redisorder')->sysnc_goods_total($goods_id);
 		
 	}

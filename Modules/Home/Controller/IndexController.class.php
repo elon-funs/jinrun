@@ -984,7 +984,20 @@ class IndexController extends CommonController {
 		$where .= " and gc.end_time <= {$now_time}  and gc.is_new_buy=0 ";
 		
 		
-		$community_goods = D('Home/Pingoods')->get_community_index_goods('g.*,gc.begin_time,gc.end_time,gc.big_img,gc.labelname,gc.video ', $where,$offset,$per_page);
+		$order='g.istop DESC, g.settoptime DESC,g.index_sort desc,g.id desc ';
+		if (isset($gpc['order']) and $gpc['order']>=1) {	
+			if　($gpc['order']==2) {
+				$order='g.price ASC';
+			}elseif　($gpc['order']==3) {
+				$order='g.id DESC';
+			}elseif　($gpc['order']==4) {
+				$order='g.sales DESC';
+			}else {
+				$order='g.istop DESC, g.settoptime DESC,g.index_sort desc,g.id desc ';
+			}
+		}
+
+		$community_goods = D('Home/Pingoods')->get_community_index_goods('g.*,gc.begin_time,gc.end_time,gc.big_img,gc.labelname,gc.video ', $where,$offset,$per_page,$order);
 		
 		if( !empty($community_goods) )
 		{
@@ -2201,7 +2214,6 @@ class IndexController extends CommonController {
 			$head_id = '';
 		$pid = $_GPC['gid'];
 
-		
 		$token =  $_GPC['token'];
 		
 		$weprogram_token = M('lionfish_comshop_weprogram_token')->field('member_id')->where( array('token' => $token) )->find();
@@ -2259,9 +2271,7 @@ class IndexController extends CommonController {
 		if(empty($full_reducemoney) || $full_reducemoney <= 0) $is_open_fullreduction = 0;
 
 		$cateList = $cateArr = array();
-		
 		$parent_cate = M('lionfish_comshop_goods_category')->field('id,banner,name')->where( array('cate_type' =>'normal','id' => $pid ) )->find();
-		
 	    if($parent_cate){
 	    	
 			$cate_info = M('lionfish_comshop_goods_category')->field('id,banner,name,logo')->where( array('cate_type' =>'normal','pid' => $parent_cate['id'] ) )->order('sort_order desc, id desc')->select();			
@@ -2271,7 +2281,6 @@ class IndexController extends CommonController {
 	    	}else {
 	    		$cateArr[] = $parent_cate;
 	    	}
-
 			foreach ($cateArr as $key => $val) {
 				$gid = $val['id'];
 				$cate_info = array();
@@ -2289,7 +2298,6 @@ class IndexController extends CommonController {
 		    	           where  pg.goods_id = g.goods_id and g.cate_id={$gid} and pg.head_id = {$head_id} 
 						    order by pg.id desc ";
 					$goods_ids_arr = M()->query($sql_goods_ids);
-					
 					
 					$ids_arr = array();
 					foreach($goods_ids_arr as $val){
@@ -2346,6 +2354,8 @@ class IndexController extends CommonController {
 				
 				$community_goods = '';
 				$community_goods = D('Home/Pingoods')->get_community_index_goods('g.*,gc.begin_time,gc.end_time,gc.big_img,gc.is_take_fullreduction,gc.labelname,gc.video ', $where, 0, 10000);
+
+					// var_dump($where);exit();
 
 				$list = $cart = array();
 				if( !empty($community_goods) )
@@ -2425,6 +2435,7 @@ class IndexController extends CommonController {
 			}
 		}
 	    
+				// var_dump($cateList);exit();
 
 	    $is_show_cate_tabbar = D('Home/Front')->get_config_by_name('is_show_cate_tabbar');
 	    echo json_encode(

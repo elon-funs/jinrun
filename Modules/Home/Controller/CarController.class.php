@@ -4389,7 +4389,7 @@ public function sub_order()
 			$xml = http_request($url,$post_xml);
 			$array = xml($xml);
 			
-			if($array['RETURN_CODE'] == 'SUCCESS' && $array['RESULT_CODE'] == 'SUCCESS'){
+			if($array['return_code'] == 'SUCCESS' && $array['result_code'] == 'SUCCESS'){
 				$time = time();
 				$tmp=array();
 				$tmp['appId'] = $appid;
@@ -4429,7 +4429,7 @@ public function sub_order()
 				$data = array();
 				$data['code'] = 1;
 				$data['text'] = "错误";
-				$data['RETURN_CODE'] = $array['RETURN_CODE'];
+				$data['RETURN_CODE'] = $array['return_code'];
 				$data['RETURN_MSG'] = $array['RETURN_MSG'];
 				}
 				$data['has_yupay'] = 0;
@@ -4581,7 +4581,7 @@ public function sub_order()
 		$url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 		$xml = http_request($url,$post_xml);
 		$array = xml($xml);
-		if($array['RETURN_CODE'] == 'SUCCESS' && $array['RESULT_CODE'] == 'SUCCESS'){
+		if($array['return_code'] == 'SUCCESS' && $array['result_code'] == 'SUCCESS'){
 			$time = time();
 			$tmp= array();
 			$tmp['appId'] = $appid;
@@ -4605,7 +4605,7 @@ public function sub_order()
 		}else{
 			$data['code'] = 1;
 			$data['text'] = "错误";
-			$data['RETURN_CODE'] = $array['RETURN_CODE'];
+			$data['RETURN_CODE'] = $array['return_code'];
 			$data['RETURN_MSG'] = $array['RETURN_MSG'];
 		}
 		
@@ -4692,13 +4692,10 @@ public function sub_order()
 		//检测是否已经支付过了begin
 		
 		$order_relate_info = M('lionfish_comshop_order_relate')->where( array('order_id' => $order_id ) )->order('id desc')->find();
-		
 		if( !empty($order_relate_info) && $order_relate_info['order_all_id'] > 0 )
 		{
 			$order_all_info = M('lionfish_comshop_order_all')->where( array('id' => $order_relate_info['order_all_id'] ) )->find();
-			
-			if( !empty($order_all_info) && !empty($order_all_info['out_trade_no']) )
-			{
+			if( (!empty($order_all_info)) and (!empty($order_all_info['out_trade_no'])) ){
 				
 				$out_trade_no = $order_all_info['out_trade_no'];
 		
@@ -4714,7 +4711,7 @@ public function sub_order()
 				$post['mch_id'] = $mch_id;
 				$post['nonce_str'] = $nonce_str;
 				$post['out_trade_no'] = $out_trade_no;
-			
+				
 				$sign = sign($post,$pay_key);
 				
 				$post_xml = '<xml>
@@ -4728,10 +4725,9 @@ public function sub_order()
 				$url = "https://api.mch.weixin.qq.com/pay/orderquery";
 				
 				$result = http_request($url,$post_xml);
-				
 				$array = xml($result);
 				
-				if( $array['RETURN_CODE'] == 'SUCCESS' && $array['RETURN_MSG'] == 'OK' )
+				if( $array['return_code'] == 'SUCCESS' && $array['RETURN_MSG'] == 'OK' )
 				{
 					if( $array['TRADE_STATE'] == 'SUCCESS' )
 					{
@@ -4931,7 +4927,7 @@ public function sub_order()
 		$url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 		$xml = http_request($url,$post_xml);
 		$array = xml($xml);
-		if($array['RETURN_CODE'] == 'SUCCESS' && $array['RESULT_CODE'] == 'SUCCESS'){
+		if($array['return_code'] == 'SUCCESS' && $array['result_code'] == 'SUCCESS'){
 			$time = time();
 			$tmp= array();
 			$tmp['appId'] = $appid;
@@ -4964,7 +4960,7 @@ public function sub_order()
 		}else{
 			$data['code'] = 1;
 			$data['text'] = "错误";
-			$data['RETURN_CODE'] = $array['RETURN_CODE'];
+			$data['RETURN_CODE'] = $array['return_code'];
 			$data['RETURN_MSG'] = $array['RETURN_MSG'];
 		}
 		

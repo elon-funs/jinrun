@@ -210,7 +210,13 @@ function tpl_form_field_multi_image3($name, $value = array() , $options = array(
     $s.= '</div>';
     return $s;
 }
-function xml($xml) {
+function xml($xml){
+    $backup = libxml_disable_entity_loader(true);
+    $data = (array)simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
+    libxml_disable_entity_loader($backup);
+    return json_decode(json_encode($data), true);
+}
+function xml2arr($xml) {
     $p = xml_parser_create();
     xml_parse_into_struct($p, $xml, $vals, $index);
     xml_parser_free($p);
